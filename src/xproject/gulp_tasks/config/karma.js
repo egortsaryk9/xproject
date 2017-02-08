@@ -11,7 +11,7 @@ module.exports = function(config) {
 
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: path.resolve(__dirname, '../../'),
+    basePath: path.resolve(__dirname, '../../wwwroot/'),
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
