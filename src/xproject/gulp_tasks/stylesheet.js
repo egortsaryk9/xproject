@@ -7,7 +7,7 @@ let path = require('path')
 
 module.exports = function (singleRun) {
   return function () {    
-    let gulpStream = gulp.src(path.resolve(__dirname, './../wwwroot/client/boot.less')).pipe(less());
+    let gulpStream = gulp.src(path.resolve(__dirname, './../client/boot.less')).pipe(less());
 
     if (singleRun) {
       gulpStream = gulpStream.pipe(cssnano());

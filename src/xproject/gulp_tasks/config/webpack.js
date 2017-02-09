@@ -12,8 +12,8 @@ if (coverageEnabled) {
 
 module.exports = {
   entry: {
-    boot: './wwwroot/client/boot.js',
-    vendor: './wwwroot/client/vendor.js'
+    boot: './client/boot.js',
+    vendor: './client/vendor.js'
   },
   output: {
     path: path.resolve(__dirname, '../../', config.client.destination),

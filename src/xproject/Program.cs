@@ -14,7 +14,6 @@ namespace xproject
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseWebRoot("wwwroot/dist")
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
