@@ -19,13 +19,13 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      { pattern: 'client/test.vendor.js' },
-      { pattern: 'client/test.boot.js' },
-      { pattern: 'client/css/*.css', included: false, served: true }
+      { pattern: 'frontend/test.vendor.js' },
+      { pattern: 'frontend/test.boot.js' },
+      { pattern: 'frontend/css/*.css', included: false, served: true }
     ],
 
     proxies: {
-      '/css/': '/base/client/css/'
+      '/css/': '/base/frontend/css/'
     },
 
     // list of files to exclude
@@ -35,8 +35,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'client/test.vendor.js': ['webpack', 'sourcemap'],
-      'client/test.boot.js': ['webpack', 'sourcemap']
+      'frontend/test.vendor.js': ['webpack', 'sourcemap'],
+      'frontend/test.boot.js': ['webpack', 'sourcemap']
     },
 
     // test results reporter to use

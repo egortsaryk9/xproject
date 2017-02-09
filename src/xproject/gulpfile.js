@@ -27,7 +27,7 @@ gulp.task('client-style', eslintTask());
 
 
 gulp.task('client-stylesheet-watch', function() {
-  gulp.watch(['wwwroot/client/boot.less', 'wwwroot/client/**/*.less'], ['client-stylesheet']);
+  gulp.watch(['frontend/boot.less', 'frontend/**/*.less'], ['client-stylesheet']);
 });
 
 gulp.task('frontend-serve', function(done) {

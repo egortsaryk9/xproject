@@ -2,9 +2,9 @@
 
 module.exports = {
   client: {
-    source: ['client/**/*.{html,css,ico}', '!**/app/**'],
+    source: ['frontend/**/*.{html,css,ico}', '!**/app/**'],
     destination: 'wwwroot/',
-    app: ['client/**/*.js']
+    app: ['frontend/**/*.js']
   },
   liveReload: {
     port: 35729
