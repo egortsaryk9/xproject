@@ -66,7 +66,7 @@ describe('PostService', () => {
   }));
 
   it('should refresh remote posts', () => {
-    returnsResponse(postsResponse, RequestMethod.Get, '/posts');
+    returnsResponse(postsResponse, RequestMethod.Get, '/api/posts');
 
     service.remotePosts.subscribe((posts) => {
       if (posts.length) {
@@ -78,7 +78,7 @@ describe('PostService', () => {
   });
 
   it('should return posts got in response', () => {
-    returnsResponse(postsResponse, RequestMethod.Get, '/posts');
+    returnsResponse(postsResponse, RequestMethod.Get, '/api/posts');
 
     service.refreshPosts().subscribe((posts) => {
       expect(posts).toEqual(postsResponse);
@@ -86,7 +86,7 @@ describe('PostService', () => {
   });
 
   it('should return post', () => {
-    returnsResponse(singlePost, RequestMethod.Get, `/post/${singlePost._id}`);
+    returnsResponse(singlePost, RequestMethod.Get, `/api/posts/${singlePost._id}`);
 
     service.getPost(singlePost._id).subscribe((post) => {
       expect(post).toEqual(singlePost);
@@ -94,7 +94,7 @@ describe('PostService', () => {
   });
 
   it('should add post', () => {
-    returnsResponse(singlePost, RequestMethod.Post, '/post', JSON.stringify(singlePost), {
+    returnsResponse(singlePost, RequestMethod.Post, '/api/posts', JSON.stringify(singlePost), {
       'Content-Type': 'application/json', Authorization: 'Bearer secretToken'
     });
 
@@ -105,7 +105,7 @@ describe('PostService', () => {
   });
 
   it('should update post', () => {
-    returnsResponse(singlePost, RequestMethod.Post, `/post/${singlePost._id}`, JSON.stringify(singlePost), {
+    returnsResponse(singlePost, RequestMethod.Post, `/api/posts/${singlePost._id}`, JSON.stringify(singlePost), {
       'Content-Type': 'application/json', Authorization: 'Bearer secretToken'
     });
 

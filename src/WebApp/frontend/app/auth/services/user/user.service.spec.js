@@ -11,7 +11,7 @@ describe('UserService', () => {
   let storage;
   let credentials = { email: 'user@gmail.com', password: 'super_secret' };
   function successfulHttpLogin() {
-    backend.expectPOST('/login', JSON.stringify(credentials))
+    backend.expectPOST('/api/auth/session', JSON.stringify(credentials))
       .respond(200, JSON.stringify({ success: true, auth_token: 'secret_token' }));
   }
 
@@ -49,7 +49,7 @@ describe('UserService', () => {
   });
 
   it('should not log in user when request was unsuccessful', () => {
-    backend.expectPOST('/login', JSON.stringify(credentials))
+    backend.expectPOST('/api/auth/session', JSON.stringify(credentials))
       .respond(200, JSON.stringify({ success: false }));
 
     subject.login(credentials).subscribe((result) => {
