@@ -22,7 +22,7 @@ export class UserService {
 
   login(credentials) {
     return this._http
-      .post('/login', JSON.stringify(credentials), { headers: this._request.getJsonHeaders() })
+      .post('/api/auth/session', JSON.stringify(credentials), { headers: this._request.getJsonHeaders() })
       .map(res => res.json())
       .map((res) => {
         if (res.success) {
